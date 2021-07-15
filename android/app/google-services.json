@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "490057637309",
+    "project_id": "ugram-90b8a",
+    "storage_bucket": "ugram-90b8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490057637309:android:39ad6f0136b4fdbeaac6d4",
+        "android_client_info": {
+          "package_name": "com.example.lazyloadlists"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490057637309-qltm3ni69jd09eqil7osc7pfneun8vvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUbtKJA99gLKGoCa_YBsru5_06Ji2NlOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490057637309-qltm3ni69jd09eqil7osc7pfneun8vvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

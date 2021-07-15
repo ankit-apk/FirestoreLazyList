@@ -10,14 +10,15 @@ import 'package:lazyloadlists/networking.dart';
 class CommentsController extends GetxController {
   var comments = List<CommentsModel>.empty(growable: true).obs;
   final picker = ImagePicker();
-
   var file;
   RxString imageUrl = ''.obs;
+  var datalist = List.empty(growable: true).obs;
 
   @override
   void onInit() {
     super.onInit();
     getComments();
+    getData();
   }
 
   getComments() async {
@@ -27,21 +28,6 @@ class CommentsController extends GetxController {
     }
   }
 
-  // Future pickImage() async {
-  //   final pickedFile = await picker.getImage(source: ImageSource.camera);
-  //   _imageFile = File(pickedFile!.path);
-  // }
-
-  // Future uploadImageToFirebase() async {
-  //   String fileName = basename(_imageFile.path);
-  //   StorageReference firebaseStorageRef =
-  //       FirebaseStorage.instance.ref().child('uploads/$fileName');
-  //   StorageUploadTask uploadTask = firebaseStorageRef.putFile(_imageFile);
-  //   StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-  //   taskSnapshot.ref.getDownloadURL().then(
-  //         (value) => print("Done: $value"),
-  //       );
-  // }
   getImage() async {
     final _imagePicker = ImagePicker();
     PickedFile? image =
@@ -66,5 +52,12 @@ class CommentsController extends GetxController {
 
     CollectionReference c = FirebaseFirestore.instance.collection('images');
     c.doc().set(demoData);
+  }
+
+  getData() {
+    CollectionReference c = FirebaseFirestore.instance.collection('images');
+    c.snapshots().listen((event) {
+      datalist.value = event.docs;
+    });
   }
 }

@@ -60,9 +60,6 @@ class MyHomePage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                // (_commentsController.imageUrl.value == '')
-                //     ? Text('Null')
-                //     : Image.network(_commentsController.imageUrl.value),
                 Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
